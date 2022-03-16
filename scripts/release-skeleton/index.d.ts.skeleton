@@ -8,11 +8,11 @@ export type GLTransitionObject = {
     author?: string;
     license?: string;
     name: GLTransitionNames;
-    displayName?: string;
+    displayName: string;
     glsl: string;
     defaultParams: Record<string, UniformDefaultValue>;
     paramsTypes: Record<string, UniformValue>;
 };
 
-type GLTransitions = Array<GLTransitionObject>;
+declare const GLTransitions: Array<GLTransitionObject>;
 export default GLTransitions;
