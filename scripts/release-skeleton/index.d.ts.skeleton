@@ -1,7 +1,5 @@
 export type UniformDefaultLiteralValue = number | boolean | null;
 
-export type UniformValue = "vec4" | "float" | "bool" | "vec2" | "int" | "ivec2" | "vec3" | "sampler2D";
-
 export type UniformDefaultValue =
     | Array<UniformDefaultLiteralValue>
     | UniformDefaultLiteralValue;
@@ -18,5 +16,3 @@ export type GLTransitionObject = {
 
 type GLTransitions = Array<GLTransitionObject>;
 export default GLTransitions;
-
-export type GLTransitionNames = 

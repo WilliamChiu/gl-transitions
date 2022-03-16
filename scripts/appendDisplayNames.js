@@ -1,4 +1,5 @@
 const fs = require('fs')
+const { exit } = require('process');
 
 const displayNames = {
     "Bounce": "Bounce",
@@ -77,7 +78,24 @@ const displayNames = {
     "wipeLeft": "Wipe Left",
     "wipeRight": "Wipe Right",
     "wipeUp": "Wipe Up",
+    "Overexposure" : "Overexposure",
+    "ZoomLeftWipe" : "Zoom Left Wipe",
+    "ZoomRigthWipe" : "Zoom Right Wipe",
+    "coord-from-in" : "Coord From In",
+    "powerKaleido" : "Power Kaleido",
+    "scale-in" : "Scale In",
 }
 
-const transitions = JSON.parse(fs.readFileSync(process.argv[2], 'utf8'))
-fs.writeFileSync(process.argv[2], JSON.stringify(transitions.map(transition => ({displayName: displayNames[transition.name], ...transition}))))
+const RED = "\x1b[31m";
+const RESET = "\x1b[0m";
+
+const transitions = JSON.parse(fs.readFileSync(process.argv[2], "utf8"))
+let success = true
+fs.writeFileSync(process.argv[2], JSON.stringify(transitions.map(transition => {
+    if (!displayNames[transition.name]) {
+        console.error(RED, `${transition.name} not in displayNames. Please add a displayName to the dictionary.`, RESET)
+        success = false
+    }
+    return ({displayName: displayNames[transition.name], ...transition})
+})))
+if (!success) exit(1)
