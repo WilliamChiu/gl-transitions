@@ -1,8 +1,9 @@
 {
-  "name": "gl-transitions",
+  "name": "@chillyblue/gl-transitions",
   "version": "0.0.0",
   "description": "The open collection of GL Transitions",
   "main": "index.js",
+  "types": "index.d.ts",
   "repository": {
     "type": "git",
     "url": "git+https://github.com/gl-transitions/gl-transitions.git"
