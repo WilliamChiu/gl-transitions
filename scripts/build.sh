@@ -11,7 +11,11 @@ npm version minor --no-git-tag-version
 cd -
 
 gl-transition-transform -d transitions -o release/gl-transitions.json
+node scripts/appendDisplayNames.js release/gl-transitions.json
 cd release
 echo "window.GLTransitions=" | cat - gl-transitions.json > gl-transitions.js
 echo "module.exports=" | cat - gl-transitions.json > index.js
+echo "module.exports=" | cat - gl-transitions.json > index.js
+mv index.d.ts.skeleton index.d.ts
+node -p 'require("./gl-transitions.json").map(t => `"${t.name}"`).join(" | ") + ";"' >> index.d.ts
 mkdir transitions && cp ../transitions/*.glsl transitions/.
