@@ -1,7 +1,7 @@
 cd $(dirname $0)/..
 set -e
 
-remoteVersion=`npm show gl-transitions version`
+remoteVersion=`npm show @achillyblue/gl-transitions version`
 
 rm -rf release/
 cp -R scripts/release-skeleton release
