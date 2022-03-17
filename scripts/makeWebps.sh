@@ -12,19 +12,20 @@ creategif() {
         -i scripts/images/fromImage.jpg \
         -i scripts/images/toImage.jpg \
         -g scripts/images/spiral-2.png \
-        -f 30 \
-        -d 8  \
-        -w 424 \
-        -h 352 \
+        -f 20 \
+        -d 5  \
+        -w 240 \
+        -h 200 \
         -o $name/ 2> /dev/null; \
     ffmpeg \
-        -framerate 30 \
+        -framerate 20 \
         -i $name/%d.png \
         -vcodec libwebp \
         -lossless 0 \
-        -compression_level 5 \
+        -quality 10 \
+        -compression_level 3 \
         -loop 0 \
-        -s 424:352 \
+        -s 240:200 \
         webp/$name.webp \
         2> /dev/null;
     rm -rf $name
