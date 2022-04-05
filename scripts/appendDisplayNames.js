@@ -41,7 +41,7 @@ const displayNames = {
     "crosshatch": "Cross Hatch",
     "crosswarp": "Cross Warp",
     "cube": "Cube",
-    "directional-easing": "Directional",
+    "directional-easing": "Directional Easing",
     "directionalwarp": "Directional Warp",
     "directionalwipe": "Directional Wipe",
     "displacement": "Displacement",
@@ -84,6 +84,7 @@ const displayNames = {
     "coord-from-in" : "Coord From In",
     "powerKaleido" : "Power Kaleido",
     "scale-in" : "Scale In",
+    "star": "Star",
 }
 
 const RED = "\x1b[31m";
