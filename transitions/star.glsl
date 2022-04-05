@@ -21,7 +21,7 @@ vec4 transition (vec2 uv) {
   float r = nom / denom;
   
   // 2.0 is a magic number here
-  if (r * progress * 2.0 > radius)
+  if (r * progress * 2.0 < radius)
     return getFromColor(uv);
   else
     return getToColor(uv);
