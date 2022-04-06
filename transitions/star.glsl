@@ -20,8 +20,8 @@ vec4 transition (vec2 uv) {
   
   float r = nom / denom;
   
-  // 2.0 is a magic number here
-  if (r * progress * 2.0 < radius)
+  // 2.63 is a magic number here equal to 1/(min radius of curve)
+  if (r * progress * 2.63 < radius)
     return getFromColor(uv);
   else
     return getToColor(uv);
