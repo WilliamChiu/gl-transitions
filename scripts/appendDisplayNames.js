@@ -9,7 +9,7 @@ const displayNames = {
     "ButterflyWaveScrawler": "Butterfly Wave Scrawler",
     "CircleCrop": "Circle Crop",
     "ColourDistance": "Colour Distance",
-    "CrazyParametricFun": "Crazy ParametricFun",
+    "CrazyParametricFun": "Crazy Parametric Fun",
     "CrossZoom": "Cross Zoom",
     "Directional": "Directional",
     "DoomScreenTransition": "Doom Screen",
@@ -90,8 +90,24 @@ const displayNames = {
 const RED = "\x1b[31m";
 const RESET = "\x1b[0m";
 
-const transitions = JSON.parse(fs.readFileSync(process.argv[2], "utf8"))
+const count = names =>
+  names.reduce((result, value) => ({ ...result,
+    [value]: (result[value] || 0) + 1
+  }), {});
+
+const duplicates = dict =>
+  Object.keys(dict).filter((a) => dict[a] > 1);
+
 let success = true
+const names = Object.values(displayNames)
+const duplicateNames = duplicates(count(names))
+if (duplicateNames.length) {
+    console.error(RED, `Duplicate transition names present: ${duplicateNames}`, RESET)
+    success = false
+}
+if (!success) exit(1)
+
+const transitions = JSON.parse(fs.readFileSync(process.argv[2], "utf8"))
 fs.writeFileSync(process.argv[2], JSON.stringify(transitions.map(transition => {
     if (!displayNames[transition.name]) {
         console.error(RED, `${transition.name} not in displayNames. Please add a displayName to the dictionary.`, RESET)
