@@ -38,3 +38,7 @@ for f in transitions/*.glsl; do
    creategif $f & 
 done
 )
+
+gsutil -m cp webp/** "gs://kapwing/static/transitions/"
+gsutil -m acl set public-read "gs://kapwing/static/transitions/**.webp"
+rm -rf webp
