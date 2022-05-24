@@ -11,7 +11,7 @@
 
 ### Build
 
-- Before running, install gl-transition-transform globally: `yarn global add gl-transition-transform`
+- Before running, install gl-transition-transform globally: `yarn global add gl-transition-scripts`
 
 ```
 ./scripts/build.sh
