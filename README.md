@@ -1,3 +1,26 @@
+# kapwing specific
+
+### Generate/publish new webps
+
+- When adding or updating transitions, make sure to create new webps for them
+- Note you may need ffmpeg with libwebp. This can be done through tapping `homebrew-ffmpeg/ffmpeg` and using the `--with-libwebp` flag: `brew install --with-libvmaf --with-librsvg --with-libwebp homebrew-ffmpeg/ffmpeg/ffmpeg`
+
+```./scripts/makeWebps.sh```
+
+### Build
+
+```./scripts/build.sh```
+
+### Publish
+
+```./scripts/publish.sh```
+
+### Updating display names:
+
+- Display names for transitions live in `scripts/appendDisplayNames.js`.
+
+---
+# Original README
 
 - Website: https://gl-transitions.com  *( alternative hosting: https://gl-transitions.surge.sh/ )*
 - NPM package: https://www.npmjs.com/package/gl-transitions
