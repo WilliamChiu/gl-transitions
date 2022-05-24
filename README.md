@@ -5,15 +5,21 @@
 - When adding or updating transitions, make sure to create new webps for them
 - Note you may need ffmpeg with libwebp. This can be done through tapping `homebrew-ffmpeg/ffmpeg` and using the `--with-libwebp` flag: `brew install --with-libvmaf --with-librsvg --with-libwebp homebrew-ffmpeg/ffmpeg/ffmpeg`
 
-```./scripts/makeWebps.sh```
+```
+./scripts/makeWebps.sh
+```
 
 ### Build
 
-```./scripts/build.sh```
+```
+./scripts/build.sh
+```
 
 ### Publish
 
-```./scripts/publish.sh```
+```
+./scripts/publish.sh
+```
 
 ### Updating display names:
 
