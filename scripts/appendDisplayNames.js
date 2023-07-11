@@ -8,7 +8,7 @@ const displayNames = {
     "BowTieWithParameter": "Bow Tie With Parameter",
     "ButterflyWaveScrawler": "Butterfly Wave",
     "CircleCrop": "Circle Crop",
-    "ColourDistance": "Colour Distance",
+    "ColourDistance": "Color Distance",
     "CrazyParametricFun": "Parametric",
     "CrossZoom": "Cross Zoom",
     "Directional": "Directional",
